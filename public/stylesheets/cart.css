@@ -1,16 +1,28 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
+}
+
+.top-bar {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
 .dashboard {
@@ -23,15 +35,14 @@ body {
     background-color: #fc00ac;
     color: #ecf0f1;
     padding: 1rem;
-    position: fixed; /* Fixes the sidebar position */
-    height: 100vh; /* Ensures it takes up the full viewport height */
-    overflow: hidden; /* Prevents sidebar from scrolling */
+    position: relative;
+    height: auto;
     transition: transform 0.3s ease-in-out;
 }
 
 .sidebar-header {
     padding: 1rem 0;
-    border-bottom: 1px solid #34495e;
+    border-bottom: 1px solid #ffffff;
     margin-bottom: 1rem;
 }
 
@@ -57,8 +68,7 @@ body {
     transition: background-color 0.2s;
 }
 
-.sidebar a:hover,
-.sidebar li.active a {
+.sidebar a:hover, .sidebar li.active a {
     background-color: #000000;
 }
 
@@ -66,27 +76,72 @@ body {
     margin-right: 0.5rem;
 }
 
+.top-content {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.top-content a {
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.top-content a:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.bottom-content {
+    margin-top: auto;
+    padding-top: 50px;
+    
+    border-top: 1px solid #ec0000eb;
+}
+
+.bottom-content a {
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.bottom-content a:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
 .main-content {
     flex-grow: 1;
     padding: 1rem;
-    margin-left: 250px; /* Ensure main content is not hidden behind sidebar */
     overflow-y: auto;
 }
 
-/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 2px solid black; /* Underline for the header */
+    border-bottom: 2px solid black;
     margin-bottom: 1rem;
 }
 
-/* Left section (title and menu) */
 .header-left {
     display: flex;
     align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-search {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-grow: 1;
 }
 
 header h1 {
@@ -103,34 +158,26 @@ header h1 {
     cursor: pointer;
 }
 
-/* Center Search Bar */
-.header-search {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Aligns elements to the left */
-    flex-grow: 1;
-}
-
 #search-bar {
     padding: 10px 20px;
     font-size: 16px;
-    margin-left: 150px; /* Adjust based on layout */
+    margin-left: 150px;
     border: 1px solid #ccc;
-    border-radius: 50px; /* Fully rounded */
-    width: 600px; /* Adjust width */
-    outline: none; /* Removes default outline */
+    border-radius: 50px;
+    width: 600px; 
+    outline: none; 
     transition: all 0.3s ease-in-out;
 }
 
 #search-bar:focus {
     border-color: #fc00ac;
-    box-shadow: 0 0 10px rgba(252, 0, 172, 0.3); /* Focus shadow effect */
+    box-shadow: 0 0 10px rgba(252, 0, 172, 0.3);
 }
 
 #search-button {
     background: none;
     border: none;
-    margin-left: -40px; /* Move the button closer to the search bar */
+    margin-left: -40px;
     cursor: pointer;
     padding: 5px 10px;
     font-size: 1.2rem;
@@ -139,13 +186,7 @@ header h1 {
 }
 
 #search-button:hover {
-    color: #fb229a; /* Color change on hover */
-}
-
-/* Profile Icon on the Right */
-.header-right {
-    display: flex;
-    align-items: center;
+    color: #fB229A;
 }
 
 #profile-link {
@@ -159,19 +200,18 @@ header h1 {
 }
 
 #profile-link:hover {
-    color: #fb229a; /* Hover effect for the profile icon */
+    color: #fb229a;
 }
 
-/* Main Content Area */
-.content {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.content section {
+    display: none;
 }
 
-/* Cart Items */
+.content section.active {
+    display: block;
+}
+
+                            /* CART ITEMS */
 .cart-items {
     margin-bottom: 20px;
 }
@@ -183,12 +223,12 @@ header h1 {
     border: 1px solid #eee;
     border-radius: 8px;
     margin-bottom: 10px;
-    transition: box-shadow 0.3s, transform 0.3s; /* Added transform for effect */
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .cart-item:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px); /* Subtle lift on hover */
+    transform: translateY(-2px);
 }
 
 .item-image img {
@@ -215,7 +255,7 @@ header h1 {
 .item-quantity {
     display: flex;
     align-items: center;
-    gap: 10px; /* Added gap between the buttons */
+    gap: 10px;
 }
 
 .quantity-btn {
@@ -225,7 +265,7 @@ header h1 {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition on hover */
+    transition: background-color 0.3s;
 }
 
 .quantity-btn:hover {
@@ -239,7 +279,7 @@ header h1 {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition on hover */
+    transition: background-color 0.3s;
 }
 
 .remove-item:hover {
@@ -254,7 +294,7 @@ header h1 {
     padding-top: 10px;
 }
 
-/* Checkout Button */
+                            /* Checkout Button */
 .checkout-btn {
     background-color: #000000;
     color: #fff;
@@ -262,71 +302,120 @@ header h1 {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition on hover */
+    transition: background-color 0.3s;
 }
 
 .checkout-btn:hover {
     background-color: #fc00ac;
 }
 
-/* Added media query for responsiveness */
-@media (max-width: 768px) {
-    .main-content {
-        padding: 10px;
-        margin-left: 0; /* Prevent overlap with the sidebar */
-    }
-
-    .header-search input {
-        width: 100%; /* Full width on smaller screens */
-    }
-
-    .sidebar {
-        width: 200px; /* Adjusted sidebar width */
-    }
-
-    #search-bar {
-        margin-left: 0; /* Reset margin on smaller screens */
-        width: 100%; /* Full width for search bar */
-    }
-}
-
-.top-content {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ffffff;
-}
-
-.top-content a {
-    display: block;
-    padding: 10px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.top-content a:hover {
-    background-color: #000000;
-    color: #fff;
-}
-
-.bottom-content {
-    margin-top: auto;
-    padding-top: 100px;
-    border-top: 1px solid #ccc;
-}
-.bottom-content a {
-    display: block;
-    padding: 10px;
-    color: #ffffff;
-    text-decoration: none;
-}
-.bottom-content a:hover {
-    background-color: #000000;
-    color: #fff;
-}
-
 .item-image img {
-    width: 100px; /* Maintain the desired width */
-    height: auto; /* Set height to auto to preserve aspect ratio */
-    object-fit: contain; /* Change from cover to contain to fit within the box without cropping */
+    width: 100px;
+    height: auto;
+    object-fit: contain;
     margin-right: 15px;
     border-radius: 8px;
 }
+
+
+.full-footer {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0); 
+    padding: 20px; 
+}
+
+.footer-container {
+    display: flex; 
+    justify-content: space-around; 
+}
+
+.footer-container h3 {
+    color: rgb(0, 0, 0); 
+    font-size: 1rem; 
+    margin-bottom: 10px; 
+}
+
+.footer-container a {
+    color: rgb(0, 0, 0); 
+    text-decoration: none; 
+    display: block; 
+    margin-bottom: 5px; 
+    font-size: 0.75rem; 
+}
+
+.footer-container a:hover {
+    text-decoration: underline; 
+}
+
+.social-icons {
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.payment-methods {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+.payment-icons svg {
+    width: 40px; 
+    height: auto; 
+}
+
+.contact-us h3 {
+    font-size: 16px;
+
+}
+
+.contact-us p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-us a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #000;
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .header-search input {
+        width: 100%; 
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    #search-bar {
+        margin-left: 0;
+        width: 100%; 
+    }
+}
+
+
