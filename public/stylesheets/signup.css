@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* Container that will take full height */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom, transparent 50%, white 50%);
+}
+
+/* Top half with background image */
+.top-half {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%; /* Half of the viewport height */
+    background: url('/images/background.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Bottom half background color */
+.bottom-half {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%; /* Bottom half with a solid color */
+    background-color: white;
+}
+
+/* Form container */
+.form-container {
+    position: relative;
+    z-index: 1; /* To make sure it's above the backgrounds */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Form styling */
+.title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #fb229a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #a1a1a1;
+    cursor: not-allowed;
+}
+
+.signin-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.error-message {
+    color: #ff0000; /* Bright red color */
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+}
