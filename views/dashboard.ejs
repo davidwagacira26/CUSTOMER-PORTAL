@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
+            </div>
+            <nav>
+                <ul>
+                    <div class="top-content">
+                        <li><a href="/dashboard"><i data-lucide="home"></i> Home</a></li>
+                        <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
+                        <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
+                        <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
+                    </div>
+                    <div class="bottom-content">
+                        <li><a href="/profile"><i data-lucide="user"></i> My Profile</a></li>
+                        <li><a href="#" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <div class="header-left">
+                    <h1>Dashboard</h1>
+                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+                <div class="header-search">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                    <button id="search-button" aria-label="Search">
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            
+                <div class="img-case">
+                    <a href="/profile"><img src="/images/profile.png" alt=""></a>
+                </div>
+            </header>
+            <div class="content">
+                <section id="home" class="active">
+                    <h2>Welcome back, User!</h2>
+                    <p>Here's an overview of your account</p>
+                    <br>
+                    <div class="analytics-grid">
+                        <div class="card">
+                            <h3>Purchase History</h3>
+                            <ul>
+                                <li>KCC Delight - Ksh. 10,000</li>
+                                <li>LA Yorghurt - Ksh. 15,000</li>
+                                <li>Gold Crown Milk - Ksh. 20,000</li>
+                            </ul>
+                            <button class="view-more-button">View More</button>
+                        </div>
+                        <div class="card">
+                            <h3>Most Purchased Products</h3>
+                            <ul>
+                                <li>Delight Vanilla 150ml - 50 units</li>
+                                <li>KCC Gold Crown Fresh Milk 500ml - 40 units</li>
+                                <li>UHT Homogenised Milk 1L - 30 units</li>
+                            </ul>
+                            <button class="view-more-button">View More</button>
+                        </div>
+                        <div class="card">
+                            <h3>Spending Analytics</h3>
+                            <ul>
+                                <li>
+                                    <span>UHT Homogenised Milk 1L</span>
+                                    <span>Ksh. 500</span>
+                                    <div class="progress-bar"><div style="width: 50%;"></div></div>
+                                </li>
+                                <li>
+                                    <span>KCC Butter Salted Butter 500g</span>
+                                    <span>Ksh. 300</span>
+                                    <div class="progress-bar"><div style="width: 30%;"></div></div>
+                                </li>
+                                <li>
+                                    <span>La Yorghurt Strawberry 250ml</span>
+                                    <span>Ksh. 200</span>
+                                    <div class="progress-bar"><div style="width: 20%;"></div></div>
+                                </li>
+                            </ul>
+                            <button class="view-more-button">View More</button>
+                        </div>
+                    </div>
+
+                    <!-- Chart Section -->
+                    <div class="chart-wrapper">
+                        <div class="chart-container">
+                            <h3>Spending Analytics - Bar Chart</h3>
+                            <canvas id="spendingChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Spending Distribution - Pie Chart</h3>
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Spending Trends - Line Chart</h3>
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+        </main>
+    </div>
+    <script src="/javascripts/dashboard.js"></script>
+</body>
+</html>
