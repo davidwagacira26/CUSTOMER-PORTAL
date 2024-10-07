@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
-    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <title>Spending Analytics</title>
+    <link rel="shortcut icon" href="/assets/images/kcclogo.jpeg" type="image/png+xml">
+    <link rel="stylesheet" href="/assets/stylesheets/spendinganalytics.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="top-bar">
-        <div class="container">
+        <div class="containerbar">
             <span class="contact-info">
                 <i class='bx bx-envelope'></i> info@newkcc.co.ke
             </span>
@@ -21,117 +21,59 @@
             </span>
         </div>
     </div>
-    <div class="dashboard">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
-            </div>
-            <nav>
-                <ul>
-                    <div class="top-content">
-                        <li><a href="/dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
-                        <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
-                        <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
-                        <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
-                    </div>
-                    <div class="bottom-content">
-                        <li><a href="/profile"><i data-lucide="user"></i> My Profile</a></li>
-                        <li><a href="#" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
-                    </div>
-                </ul>
-            </nav>
-        </aside>
-        <main class="main-content">
-            <header>
-                <div class="header-left">
-                    <h1>Dashboard</h1>
-                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
-                        <i data-lucide="menu"></i>
-                    </button>
-                </div>
-                <div class="header-search">
-                    <input type="text" id="search-bar" placeholder="Search...">
-                    <button id="search-button" aria-label="Search">
-                        <i data-lucide="search"></i>
-                    </button>
-                </div>
-            
-                <div class="img-case">
-                    <a href="/profile"><img src="/images/profile.png" alt=""></a>
-                </div>
-            </header>
-            <div class="content">
-                <section id="home" class="active">
-                    <h2>Welcome back, User!</h2>
-                    <p>Here's an overview of your account</p>
-                    <br>
-                    <div class="analytics-grid">
-                        <div class="card">
-                            <h3>Purchase History</h3>
-                            <ul>
-                                <li>KCC Delight - Ksh. 10,000</li>
-                                <li>LA Yorghurt - Ksh. 15,000</li>
-                                <li>Gold Crown Milk - Ksh. 20,000</li>
-                            </ul>
-                            <button class="view-more-button">View More</button>
-                        </div>
-                        <div class="card">
-                            <h3>Most Purchased Products</h3>
-                            <ul>
-                                <li>Delight Vanilla 150ml - 50 units</li>
-                                <li>KCC Gold Crown Fresh Milk 500ml - 40 units</li>
-                                <li>UHT Homogenised Milk 1L - 30 units</li>
-                            </ul>
-                            <button class="view-more-button">View More</button>
-                        </div>
-                        <div class="card">
-                            <h3>Spending Analytics</h3>
-                            <ul>
-                                <li>
-                                    <span>UHT Homogenised Milk 1L</span>
-                                    <span>Ksh. 500</span>
-                                    <div class="progress-bar"><div style="width: 50%;"></div></div>
-                                </li>
-                                <li>
-                                    <span>KCC Butter Salted Butter 500g</span>
-                                    <span>Ksh. 300</span>
-                                    <div class="progress-bar"><div style="width: 30%;"></div></div>
-                                </li>
-                                <li>
-                                    <span>La Yorghurt Strawberry 250ml</span>
-                                    <span>Ksh. 200</span>
-                                    <div class="progress-bar"><div style="width: 20%;"></div></div>
-                                </li>
-                            </ul>
-                            <button class="view-more-button">View More</button>
-                        </div>
-                    </div>
-                    <div class="chart-wrapper">
-                        <div class="chart-container">
-                            <h3>Spending Analytics - Bar Chart</h3>
-                            <canvas id="spendingChart"></canvas>
-                        </div>
-                        <div class="chart-container">
-                            <h3>Spending Distribution - Pie Chart</h3>
-                            <canvas id="pieChart"></canvas>
-                        </div>
-                        <div class="chart-container">
-                            <h3>Spending Trends - Line Chart</h3>
-                            <canvas id="lineChart"></canvas>
-                        </div>
-                    </div>
-                </section>
-        </main>
+    
+    <div class="container">
+        <h1>Spending Analytics</h1>
+        <table class="checkout-table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Category</th>
+                    <th>Quantity</th>
+                    <th>Product Price</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody id="checkout-records">
+                    <tr>
+                        <td>86532</td>
+                        <td>Delight Vanilla 500ml</td>
+                        <td>Yorghurt</td>
+                        <td>50 Units</td>
+                        <td>KES 20000</td>
+                    </tr>
+            </tbody>
+            <tbody id="checkout-records">
+                <tr>
+                    <td>56532</td>
+                    <td>UHT Homogenised Milk 1L</td>
+                    <td>Milk</td>
+                    <td>40 Units</td>
+                    <td>KES 15000</td>
+                </tr>
+        </tbody> <tbody id="checkout-records">
+            <tr>
+                <td>35532</td>
+                <td>KCC Butter Salted Butter 500g</td>
+                <td>Butter</td>
+                <td>30 Units</td>
+                <td>KES 8000</td>
+            </tr>
+    </tbody>
+        </table>
     </div>
     <footer class="full-footer">
         <div class="footer-container">
             <div class="quick-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="/dashboard">Home</a></li>
-                    <li><a href="/products">Products</a></li>
-                    <li><a href="/cart">View Cart</a></li>
-                    <li><a href="/orders">Manage Orders</a></li>
+                    <li><a href="./dashboard.html">Home</a></li>
+                    <li><a href="./products.html">Products</a></li>
+                    <li><a href="./cart.html">View Cart</a></li>
+                    <li><a href="./orders.html">Manage Orders</a></li>
                 </ul>
             </div>
     
@@ -161,21 +103,21 @@
             <div class="payment-methods">
                 <h3>Payment Methods</h3>
                 <div class="payment-icons">
-                    <img src="/svg/visa.svg" alt="Visa" width="40" height="30">
-                    <img src="/svg/mastercard.svg" alt="MPESA" width="40" height="30">
-                    <img src="/images/M-PESA-logo-2.png" alt="Mastercard" width="40" height="30">
+                    <img src="/assets/svg/visa.svg" alt="Visa" width="40" height="30">
+                    <img src="/assets/svg/mastercard.svg" alt="MPESA" width="40" height="30">
+                    <img src="/assets/images/M-PESA-logo-2.png" alt="Mastercard" width="40" height="30">
                 </div>
             </div>
             <div class="footer-logo">
-                <img src="/images/newkcc-logo.png" alt="KCC Logo" style="width: 150px; height: auto;">
+                <img src="/assets/images/newkcc-logo.png" alt="KCC Logo" style="width: 150px; height: auto;">
             </div>
         </div>
     
         <div class="social-media">
             <div class="social-icons">
-                <a href="https://api.whatsapp.com/send?phone=%2B254110936565&context=ARD0QaTWj_RY3CA8TRg-AL13nEaOFTKIgFYb9aqjJxXIMD5QPR1JE18ec0_FEYapTqNgAgecd-K8ZhMQD-Ekk4HMboJ6fPkoKUHvMSg7BQ_gBKqfZZbHrPiO4GvblEpiu-PKvl_AjBfuWJS4JHsxzc_tVA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawFvaQ9leHRuA2FlbQIxMAABHW7rTHDZziF4xlHUtoWBNcvMNU2wvnmXnccowQczp_hcmKnTIA_6IEKV6g_aem_2kAM0Aa2SKaBztAr0J3W_g" target="_blank"><img src="/images/whatsapp.png" alt="Whatsapp" width="30" height="30"></a>
-                <a href="https://web.facebook.com/NewKCCOfficialPage/?_rdc=1&_rdr" target="_blank"><img src="/images/facebook.png" alt="Facebook" width="30" height="30"></a>
-                <a href="https://youtube.com/@newkcckenya?si=BFZMeJyHLfngAWAe" target="_blank"><img src="/images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://api.whatsapp.com/send?phone=%2B254110936565&context=ARD0QaTWj_RY3CA8TRg-AL13nEaOFTKIgFYb9aqjJxXIMD5QPR1JE18ec0_FEYapTqNgAgecd-K8ZhMQD-Ekk4HMboJ6fPkoKUHvMSg7BQ_gBKqfZZbHrPiO4GvblEpiu-PKvl_AjBfuWJS4JHsxzc_tVA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawFvaQ9leHRuA2FlbQIxMAABHW7rTHDZziF4xlHUtoWBNcvMNU2wvnmXnccowQczp_hcmKnTIA_6IEKV6g_aem_2kAM0Aa2SKaBztAr0J3W_g" target="_blank"><img src="/assets/images/whatsapp.png" alt="Whatsapp" width="30" height="30"></a>
+                <a href="https://web.facebook.com/NewKCCOfficialPage/?_rdc=1&_rdr" target="_blank"><img src="/assets/images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://youtube.com/@newkcckenya?si=BFZMeJyHLfngAWAe" target="_blank"><img src="/assets/images/youtube.png" alt="Youtube" width="30" height="30"></a>
             </div>
         </div>
     </div>
@@ -183,6 +125,5 @@
             <p>&copy; 2024 New KCC. All rights reserved.</p>
         </div>
     </footer>
-    <script src="/javascripts/dashboard.js"></script>
 </body>
 </html>
