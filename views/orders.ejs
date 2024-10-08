@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Orders</title>
-    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
+  <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
     <link rel="stylesheet" href="/stylesheets/orders.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="dashboard">
+    <div class="top-bar">
+        <div class="containerbar">
+            <span class="contact-info">
+                <i class='bx bx-envelope'></i> info@newkcc.co.ke
+            </span>
+            <span class="contact-info">
+                <i class='bx bx-phone' ></i> +254 110 936565 / +254 780 936557
+            </span>
+        </div>
+    </div>
+    <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
@@ -17,69 +28,163 @@
             <nav>
                 <ul>
                     <div class="top-content">
-                    <li><a href="/dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
-                    <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
-                    <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
-                    <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
+                        <li><a href="/dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                        <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
+                        <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
+                        <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
+                    </div>
                     <div class="bottom-content">
-                        <li><a href="profile"><i data-lucide="user"></i> My Profile</a></li>
-                        <li><a href="#" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
+                        <li><a href="./profile.html"><i data-lucide="user"></i> My Profile</a></li>
+                        <li><a href="./index.html" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
                     </div>
                 </ul>
-                
             </nav>
         </aside>
-        <main class="main-content">
+        <main>
             <header>
-                <div class="header-left">
-                    <h1>Your Orders</h1>
-                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
-                        <i data-lucide="menu"></i>
-                    </button>
-                </div>
-                <div class="header-search">
-                    <input type="text" id="search-bar" placeholder="Search...">
-                    <button id="search-button" aria-label="Search">
+                <h1>Your Orders</h1>
+                <div class="header-right">
+                    <div class="search-bar">
                         <i data-lucide="search"></i>
-                    </button>
-                </div>
-                <div class="img-case">
-                    <a href="/profile"><img src="/images/profile.png" alt=""></a>
+                        <input type="text" placeholder="Search products...">
+                    </div>
+                    <button class="icon-button"><i data-lucide="bell"></i></button>
+                    <button class="icon-button"><i data-lucide="settings"></i></button>
+                    <button class="add-product-button">Browse products</button>
                 </div>
             </header>
             <div class="content">
                 <div class="order-list">
                     <div class="order-item">
                         <div class="order-header">
-                            <h3>Order #54632</h3>
-                            <span class="order-status">Dispatched</span>
+                            <h2 class="order-number">ORDER <span>#Y34XDHR</span></h2>
+                            <div class="order-info">
+                                <p class="expected-arrival">Expected Arrival 20/10/24</p>
+                                <p class="tracking-number">KCCL-KE467534273546</p>
+                            </div>
                         </div>
-                        <p>Date: May 1, 2023</p>
-                        <p>Total: KES 10000.00</p>
-                        <div class="order-progress">
-                            <div class="progress-bar" style="width: 33%"></div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                            <div class="progress-steps">
+                                <div class="step completed"></div>
+                                <div class="step completed"></div>
+                                <div class="step completed"></div>
+                                <div class="step"></div>
+                            </div>
+                        </div>
+                        <div class="order-stages">
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="package"></i>
+                                </div>
+                                <p>Order<br>Processed</p>
+                            </div>
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="package"></i>
+                                </div>
+                                <p>Order<br>Shipped</p>
+                            </div>
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="truck"></i>
+                                </div>
+                                <p>Order<br>En Route</p>
+                            </div>
+                            <div class="stage">
+                                <div class="stage-icon">
+                                    <i data-lucide="home"></i>
+                                </div>
+                                <p>Order<br>Arrived</p>
+                            </div>
                         </div>
                     </div>
                     <div class="order-item">
                         <div class="order-header">
-                            <h3>Order #90256</h3>
-                            <span class="order-status">On the road</span>
+                            <h2 class="order-number">ORDER <span>#Z45YFGH</span></h2>
+                            <div class="order-info">
+                                <p class="expected-arrival">Expected Arrival 08/10/24</p>
+                                <p class="tracking-number">KCCL-KE368243745397</p>
+                            </div>
                         </div>
-                        <p>Date: May 5, 2023</p>
-                        <p>Total: KES 7000.00</p>
-                        <div class="order-progress">
-                            <div class="progress-bar" style="width: 66%"></div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%;"></div>
+                            <div class="progress-steps">
+                                <div class="step completed"></div>
+                                <div class="step completed"></div>
+                                <div class="step completed"></div>
+                                <div class="step completed"></div>
+                            </div>
+                        </div>
+                        <div class="order-stages">
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="package"></i>
+                                </div>
+                                <p>Order<br>Processed</p>
+                            </div>
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="package"></i>
+                                </div>
+                                <p>Order<br>Shipped</p>
+                            </div>
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="truck"></i>
+                                </div>
+                                <p>Order<br>En Route</p>
+                            </div>
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="home"></i>
+                                </div>
+                                <p>Order<br>Arrived</p>
+                            </div>
                         </div>
                     </div>
                     <div class="order-item">
                         <div class="order-header">
-                            <h3>Order #46532</h3>
-                            <span class="order-status">Delivered</span>
+                            <h2 class="order-number">ORDER <span>#A67BCDE</span></h2>
+                            <div class="order-info">
+                                <p class="expected-arrival">Expected Arrival 19/10/24</p>
+                                <p class="tracking-number">KCCL-KE763452835492</p>
+                            </div>
                         </div>
-                        <p>Date: May 10, 2023</p>
-                        <p>Total: KES 9000.00</p>
-                        <div class="order-progress">
-                            <div class="progress-bar" style="width: 100%"></div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%;"></div>
+                            <div class="progress-steps">
+                                <div class="step completed"></div>
+                                <div class="step completed"></div>
+                                <div class="step"></div>
+                                <div class="step"></div>
+                            </div>
+                        </div>
+                        <div class="order-stages">
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="package"></i>
+                                </div>
+                                <p>Order<br>Processed</p>
+                            </div>
+                            <div class="stage completed">
+                                <div class="stage-icon">
+                                    <i data-lucide="package"></i>
+                                </div>
+                                <p>Order<br>Shipped</p>
+                            </div>
+                            <div class="stage">
+                                <div class="stage-icon">
+                                    <i data-lucide="truck"></i>
+                                </div>
+                                <p>Order<br>En Route</p>
+                            </div>
+                            <div class="stage">
+                                <div class="stage-icon">
+                                    <i data-lucide="home"></i>
+                                </div>
+                                <p>Order<br>Arrived</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -95,9 +200,6 @@
                     <li><a href="/products">Products</a></li>
                     <li><a href="/cart">View Cart</a></li>
                     <li><a href="/orders">Manage Orders</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/intent">Intent</a></li>
                 </ul>
             </div>
     
@@ -125,7 +227,7 @@
             </div>
     
             <div class="payment-methods">
-                <h3>Payment Methods</h3>
+                <h3>Payment Partners</h3>
                 <div class="payment-icons">
                     <img src="/svg/visa.svg" alt="Visa" width="40" height="30">
                     <img src="/svg/mastercard.svg" alt="MPESA" width="40" height="30">
@@ -133,7 +235,7 @@
                 </div>
             </div>
             <div class="footer-logo">
-                <img src="/images/newkcc-logo.png" alt="KCC Logo" style="width: 150px; height: auto;">
+                <img src="/newkcc-logo.png" alt="KCC Logo" style="width: 150px; height: auto;">
             </div>
         </div>
     
