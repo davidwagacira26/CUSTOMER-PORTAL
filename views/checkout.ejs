@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/checkout.css">
+  <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
+  <title>Make a Payment</title>
+</head>
+<body>
+
+  <div class="checkout-panel">
+    <div class="panel-body">
+      <h2 class="title">Checkout</h2>
+
+      <div class="progress-bar">
+        <div class="step active"></div>
+        <div class="step active"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+      </div>
+
+      <div class="payment-method">
+        <div class="method card" onclick="showPaymentForm('card')" tabindex="0">
+          <div class="card-logos">
+            <img src="/images/visa.png" alt="Visa Logo" />
+            <img src="/images/mastercard.png" alt="MasterCard Logo" />
+          </div>
+          <div class="payment-text">Pay with card</div>
+        </div>
+
+        <div class="method mpesa" onclick="showPaymentForm('mpesa')" tabindex="0">
+          <img src="/svg/mpesalogo.svg" alt="Mpesa Logo" />
+          <div class="payment-text">Pay with M-Pesa</div>
+        </div>
+      </div>
+
+      <div id="cardPaymentForm" class="payment-form">
+        <div class="input-fields">
+          <div class="column-1">
+            <label for="cardholder">Cardholder's Name</label>
+            <input type="text" id="cardholder" />
+
+            <label for="cardnumber">Card Number</label>
+            <div class="card-input-wrapper">
+              <input type="text" id="cardnumber" placeholder="0000 0000 0000 0000" maxlength="19" />
+              <img id="card-type-icon" src="" alt="Card Type" style="display: none;">
+            </div>
+
+            <div class="small-inputs">
+              <div>
+                <label for="date">Valid Thru</label>
+                <input type="text" id="date" placeholder="MM / YY" />
+              </div>
+              <div>
+                <label for="verification">CVV / CVC *</label>
+                <input type="password" id="verification" />
+              </div>
+            </div>
+          </div>
+          <div class="column-2">
+            <span class="info">
+              * CVV or CVC is the card security code, a unique three-digit number on the back of your card separate from its number.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div id="mpesaPaymentForm" class="payment-form" style="display: none;">
+        <div class="input-fields">
+          <div class="column-1">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" placeholder="Enter your M-Pesa number" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn back-btn" onclick="window.location.href='/shippingaddress'">Back</button>
+      <button class="btn next-btn" onclick="window.location.href='/revieworder'">Next</button>
+    </div>
+  </div>
+  <script src="javascripts/checkout.js"></script>
+</body>
+</html>
