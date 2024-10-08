@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
+  <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
     <link rel="stylesheet" href="/stylesheets/products.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="dashboard">
+    <div class="top-bar">
+        <div class="containerbar">
+            <span class="contact-info">
+                <i class='bx bx-envelope'></i> info@newkcc.co.ke
+            </span>
+            <span class="contact-info">
+                <i class='bx bx-phone' ></i> +254 110 936565 / +254 780 936557
+            </span>
+        </div>
+    </div>
+    <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
@@ -17,36 +28,43 @@
             <nav>
                 <ul>
                     <div class="top-content">
-                    <li><a href="/dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
-                    <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
-                    <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
-                    <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
-
-                    <div class="bottom-content">
-                    <li><a href="/profile"><i data-lucide="user"></i> My Profile</a></li>
-                    <li><a href="#" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
+                        <li><a href="/dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                        <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
+                        <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
+                        <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
                     </div>
-                </ul>  
+                    <div class="bottom-content">
+                        <li><a href="/profile"><i data-lucide="user"></i> My Profile</a></li>
+                        <li><a href="/" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
+                    </div>
+                </ul>
             </nav>
         </aside>
-        <main class="main-content">
+        <main>
             <header>
-                <div class="header-left">
-                    <h1>Products</h1>
-                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
-                        <i data-lucide="menu"></i>
-                    </button>
-                </div>
-                <div class="header-search">
-                    <input type="text" id="search-bar" placeholder="Search...">
-                    <button id="search-button" aria-label="Search">
+                <h1>Products</h1>
+                <div class="header-right">
+                    <div class="search-bar">
                         <i data-lucide="search"></i>
-                    </button>
-                </div>
-                <div class="img-case">
-                    <a href="/profile"><img src="/images/profile.png" alt=""></a>
+                        <input type="text" placeholder="Search products...">
+                    </div>
+                    <button class="icon-button"><i data-lucide="bell"></i></button>
+                    <button class="icon-button"><i data-lucide="settings"></i></button>
+                    <button class="add-product-button">Browse products</button>
                 </div>
             </header>
+            <div class="sort-container">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select">
+                    <option value="">Select option</option>
+                    <option value="category-asc">Category (A-Z)</option>
+                    <option value="category-desc">Category (Z-A)</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                </select>
+            </div>
             <div class="content">
                 <div class="product-grid">
                     <div class="product-card">
@@ -56,39 +74,39 @@
                         <img src="/images/UHT Milk.jpg" alt="Product 1">
                         <p>UHT Homogenised Milk 1L<p>
                             <p>
-                                <span class="original-price">KES 80.00</span>
-                                <span class="discounted-price"><strong>KES 68.00</strong></span>
+                                <span class="original-price">KES 152.00</span>
+                                <span class="discounted-price"><strong>KES 130.00</strong></span>
                             </p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Mala TR 500ml.jpg" alt="Product 2">
                         <p>KCC Mala Plain Milk 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 77.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Mala 1lt.jpg" alt="Product 3">
                         <p>KCC Mala Plain Milk 1L</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 155.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Mala Sleeved Bootle 250Ml.jpg" alt="Product 4">
                         <p>KCC Mala Plain Milk 250ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 120.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Delight Strawberry-250ml.jpg" alt="Product 4">
                         <p>Delight Strawberry 250ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 59.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Delight Vanilla-150ml.jpg" alt="Product 4">
                         <p>Delight Vanilla 150ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 49.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
@@ -97,49 +115,52 @@
                         </div>
                         <img src="/images/Delight Vanilla-TR 500ml.jpg" alt="Product 4">
                         <p>Delight Vanilla 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p>
+                            <span class="original-price">KES 99.00</span>
+                            <span class="discounted-price"><strong>KES 89.00</strong></span>
+                        </p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Delight Coconut-500ml.jpg" alt="Product 4">
                         <p>Delight Coconut 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 99.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Gold Crown.jpg" alt="Product 4">
                         <p>KCC Gold Crown Fresh Milk 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 54.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Gold Crown Pouch.jpg" alt="Product 4">
                         <p>KCC Gold Crown Fresh Milk Pouch 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 52.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/KCC 200ml.jpg" alt="Product 4">
                         <p>KCC Gold Crown Fresh Milk 200ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 29.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/KCC Fresh Milk.jpg" alt="Product 4">
                         <p>KCC Fresh Milk Pouch 200ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 29.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/KCC Fresh Milk 500ml.jpg" alt="Product 4">
                         <p>KCC Fresh Milk 500ml</p>
-                        <p><strong>KES 68.00</strong></p> <p>$49.99</p>
+                        <p><strong>KES 57.00</strong></p> <p>$49.99</p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/K.C.C Gold Crown Fat Free 500Ml.jpeg" alt="Product 4">
                         <p>KCC Gold Crown Fat Free 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 70.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
@@ -151,99 +172,100 @@
                     <div class="product-card">
                         <img src="/images/Safariland Powder.jpg" alt="Product 4">
                         <p>KCC Safariland Powder</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 1300.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/K.C.C Rindless Cheddar Cheese 150Gm.jpg" alt="Product 4">
                         <p>KCC Rindless Cheddar Cheese 150Gm</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 280.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/K.C.C Cheddar Cheese 250Gm.jpg" alt="Product 4">
                         <p>KCC Rindless Cheddar Cheese 250Gm</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 450.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/K.C.C Rindless Cheddar Cheese 500Gm.jpg" alt="Product 4">
                         <p>KCC Rindless Cheddar Cheese 500Gm</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 785.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/K.C.C Salted Butter 500G Tub.jpeg" alt="Product 4">
                         <p>KCC Butter Salted Butter 500g</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 900.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/K.C.C Salted Butter 500G.jpeg" alt="Product 4">
                         <p>KCC Salted Butter 500Gms</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 898.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/K.C.C Unsalted Butter 500G.jpeg" alt="Product 4">
                         <p>KCC Unsalted Butter 500g</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 898.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/KCC Super Fine Ghee.png" alt="Product 4">
                         <p>KCC Superfine Ghee</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 540.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Natural Yorghurt.png" alt="Product 4">
                         <p>KCC Natural Yorghurt 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 97.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Natural Yorghurt 500ml.png" alt="Product 4">
                         <p>KCC Natural Yorghurt 500ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 99.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Natural Yorghurt 250ml.png" alt="Product 4">
                         <p>KCC Natural Yorghurt 250ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 58.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/Natural Yorghurt 100ml.png" alt="Product 4">
                         <p>KCC Natural Yorghurt 100ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 39.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/La Yoghurt Strawberry-250ml.jpg" alt="Product 4">
                         <p>La Yorghurt Strawberry 250ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 59.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/La Yoghurt Coconut-250ml.jpg" alt="Product 4">
                         <p>La Yorghurt Coconut 250ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 57.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/La Yoghurt Pineapple-250ml.jpg" alt="Product 4">
                         <p>La Yorghurt Pineapple 250ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 59.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
                     <div class="product-card">
                         <img src="/images/La Yoghurt Vanilla-250ml.jpg" alt="Product 4">
                         <p>La Yorghurt Vanilla 250ml</p>
-                        <p><strong>KES 68.00</strong></p>
+                        <p><strong>KES 59.00</strong></p>
                         <button>Add to Cart</button>
                     </div>
+
                 </div>
             </div>
         </main>
@@ -257,9 +279,6 @@
                     <li><a href="/products">Products</a></li>
                     <li><a href="/cart">View Cart</a></li>
                     <li><a href="/orders">Manage Orders</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/intent">Intent</a></li>
                 </ul>
             </div>
     
@@ -287,7 +306,7 @@
             </div>
     
             <div class="payment-methods">
-                <h3>Payment Methods</h3>
+                <h3>Payment Partners</h3>
                 <div class="payment-icons">
                     <img src="/svg/visa.svg" alt="Visa" width="40" height="30">
                     <img src="/svg/mastercard.svg" alt="MPESA" width="40" height="30">
@@ -301,7 +320,7 @@
     
         <div class="social-media">
             <div class="social-icons">
-                <a href="https://api.whatsapp.com/send?phone=%2B254110936565&context=ARD0QaTWj_RY3CA8TRg-AL13nEaOFTKIgFYb9aqjJxXIMD5QPR1JE18ec0_FEYapTqNgAgecd-K8ZhMQD-Ekk4HMboJ6fPkoKUHvMSg7BQ_gBKqfZZbHrPiO4GvblEpiu-PKvl_AjBfuWJS4JHsxzc_tVA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawFvaQ9leHRuA2FlbQIxMAABHW7rTHDZziF4xlHUtoWBNcvMNU2wvnmXnccowQczp_hcmKnTIA_6IEKV6g_aem_2kAM0Aa2SKaBztAr0J3W_g" target="_blank"><img src="/images/whatsapp.png" alt="Whatsapp" width="30" height="30"></a>
+                <a href="https://api.whatsapp.com/send?phone=%2B254110936565&context=ARD0QaTWj_RY3CA8TRg-AL13nEaOFTKIgFYb9aqjJxXIMD5QPR1JE18ec_F0EYapTqNgAgecd-K8ZhMQD-Ekk4HMboJ6fPkoKUHvMSg7BQ_gBKqfZZbHrPiO4GvblEpiu-PKvl_AjBfuWJS4JHsxzc_tVA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawFvaQ9leHRuA2FlbQIxMAABHW7rTHDZziF4xlHUtoWBNcvMNU2wvnmXnccowQczp_hcmKnTIA_6IEKV6g_aem_2kAM0Aa2SKaBztAr0J3W_g" target="_blank"><img src="/images/whatsapp.png" alt="Whatsapp" width="30" height="30"></a>
                 <a href="https://web.facebook.com/NewKCCOfficialPage/?_rdc=1&_rdr" target="_blank"><img src="/images/facebook.png" alt="Facebook" width="30" height="30"></a>
                 <a href="https://youtube.com/@newkcckenya?si=BFZMeJyHLfngAWAe" target="_blank"><img src="/images/youtube.png" alt="Youtube" width="30" height="30"></a>
             </div>
