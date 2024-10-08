@@ -9,6 +9,10 @@ const productRoute = require('./routes/products');
 const cartRoute = require('./routes/cart');
 const ordersRoute = require('./routes/orders');
 const profileRoute = require('./routes/profile');
+const shippingaddressRoute = require('./routes/shippingaddress');
+const checkoutRoute = require('./routes/checkout');
+const revieworderRoute = require('./routes/revieworder');
+const ordercompleteRoute = require('./routes/ordercomplete');
 
 
 const app = express();
@@ -29,6 +33,11 @@ app.use('/', productRoute);
 app.use('/', cartRoute);
 app.use('/', ordersRoute);
 app.use('/', profileRoute);
+app.use('/', shippingaddressRoute);
+app.use('/', checkoutRoute);
+app.use('/', revieworderRoute);
+app.use('/', ordercompleteRoute);
+
 
 const PORT = 3000; 
 app.listen(PORT, () => {
