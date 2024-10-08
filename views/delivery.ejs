@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Delivery Status</title>
+    <link rel="stylesheet" href="/assets/stylesheets/delivery.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Delivery Status</h1>
+        <div class="card">
+            <table class="delivery-status-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Order #</th>
+                        <th>Tracking Number</th>
+                        <th>Status</th>
+                        <th>Estimated Delivery</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="/assets/images/Gold Crown.jpg" alt="KCC Gold Crown Fresh Milk 500ml">
+                        </td>
+                        <td>KCC Gold Crown Fresh Milk 500ml</td>
+                        <td>Z45YFGH</td>
+                        <td>KCCL-KE368243745397</td>
+                        <td><span class="status completed">Delivered</span></td>
+                        <td>Delivered on May 15, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="/assets/images/UHT Milk.jpg" alt="UHT Homogenised Milk 1L">
+                        </td>
+                        <td>UHT Homogenised Milk 1L</td>
+                        <td>A67BCDE</td>
+                        <td>KCCL-KE763452835492</td>
+                        <td><span class="status pending">Dispatched</span></td>
+                        <td>Expected by May 18, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="/assets/images/Mala TR 500ml.jpg" alt="KCC Mala Plain Milk 500ml">
+                        </td>
+                        <td>KCC Mala Plain Milk 500ml</td>
+                        <td>PK7YFGH</td>
+                        <td>KCCL-KE368243745397</td>
+                        <td><span class="status processing">Processing</span></td>
+                        <td>Estimated May 20, 2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button class="back-button" onclick="window.location.href='./dashboard.html'">Back to Dashboard</button>
+
+    </div>
+</body>
+</html>
