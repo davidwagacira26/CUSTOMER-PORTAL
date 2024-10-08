@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/assets/images/kcclogo.jpeg" type="image/png+xml">
     <title>Shopping Cart</title>
-    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
     <link rel="stylesheet" href="/stylesheets/cart.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div class="top-bar">
-        <div class="container">
+        <div class="containerbar">
             <span class="contact-info">
                 <i class='bx bx-envelope'></i> info@newkcc.co.ke
             </span>
@@ -21,7 +20,7 @@
             </span>
         </div>
     </div>
-    <div class="dashboard">
+    <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
@@ -35,30 +34,23 @@
                         <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
                     </div>
                     <div class="bottom-content">
-                        <li><a href=".profile"><i data-lucide="user"></i> My Profile</a></li>
-                        <li><a href="#" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
+                        <li><a href="/profile"><i data-lucide="user"></i> My Profile</a></li>
+                        <li><a href="/" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
                     </div>
                 </ul>
             </nav>
         </aside>
-        <main class="main-content">
+        <main>
             <header>
-                <div class="header-left">
-                    <h1>Shopping Cart</h1>
-                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
-                        <i data-lucide="menu"></i>
-                    </button>
-                </div>
-        
-                <div class="header-search">
-                    <input type="text" id="search-bar" placeholder="Search...">
-                    <button id="search-button" aria-label="Search">
+                <h1>Shopping Cart</h1>
+                <div class="header-right">
+                    <div class="search-bar">
                         <i data-lucide="search"></i>
-                    </button>
-                </div>
-        
-                <div class="img-case">
-                    <a href="/profile"><img src="/images/profile.png" alt=""></a>
+                        <input type="text" placeholder="Search anything in KCC...">
+                    </div>
+                    <button class="icon-button"><i data-lucide="bell"></i></button>
+                    <button class="icon-button"><i data-lucide="settings"></i></button>
+                    <button class="browse-product-button">Browse products</button>
                 </div>
             </header>
             <div class="content">
@@ -69,7 +61,7 @@
                         </div>
                         <div class="item-details">
                             <P>KCC Gold Crown Fresh Milk 500ml</P>
-                            <p class="price">KES 68.00</p>
+                            <p class="price">KES 54.00</p>
                         </div>
                         <div class="item-quantity">
                             <div class="quantity-container">
@@ -86,7 +78,7 @@
                         </div>
                         <div class="item-details">
                             <p>UHT Homogenised Milk 1L</p>
-                            <p class="price">KES 68.00</p>
+                            <p class="price">KES 130.00</p>
                         </div>
                         <div class="item-quantity">
                             <div class="quantity-container">
@@ -98,8 +90,7 @@
                         </div>
                     </div>
                 <div class="cart-summary">
-                    <h3>Total: KES 136.00</h3>
-                    <button class="checkout-btn">Proceed to Checkout</button>
+                    <button class="checkout-btn" onclick="window.location.href='/shippingaddress'">Proceed to checkout</button>
                 </div>
             </div>
         </main>
@@ -113,9 +104,6 @@
                         <li><a href="/products">Products</a></li>
                         <li><a href="/cart">View Cart</a></li>
                         <li><a href="/orders">Manage Orders</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/intent">Intent</a></li>
                     </ul>
                 </div>
         
@@ -143,7 +131,7 @@
                 </div>
         
                 <div class="payment-methods">
-                    <h3>Payment Methods</h3>
+                    <h3>Payment Partners</h3>
                     <div class="payment-icons">
                         <img src="/svg/visa.svg" alt="Visa" width="40" height="30">
                         <img src="/svg/mastercard.svg" alt="MPESA" width="40" height="30">
@@ -170,3 +158,5 @@
         <script src="/javascripts/cart.js"></script>
 </body>
 </html>
+
+
