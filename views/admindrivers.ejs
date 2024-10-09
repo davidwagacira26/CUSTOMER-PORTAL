@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Drivers</title>
+    <link rel="stylesheet" href="stylesheets/admindrivers.css">
+    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" class="logo">
+            <ul class="menu">
+                <li><a href="/admindashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                <li><a href="/adminshop"><i class="ri-shopping-bag-line"></i>Shop</a></li>
+                <li><a href="/adminorders"><i class="ri-instance-line"></i>Orders</a></li>
+                <li><a href="/admindrivers"><i class="ri-truck-line"></i>Delivery Drivers</a></li>
+                <li><a href="/admincustomers"><i class="ri-group-line"></i>Customers</a></li>
+            </ul>
+            <hr>
+            <ul class="menu">
+                <li><a href="#profile"><i class="ri-user-line"></i>My Profile</a></li>
+                <li><a href="#security"><i class="ri-lock-line"></i>Security</a></li>
+                <li><a href="/"><i class="ri-logout-box-line"></i>Logout</a></li>
+            </ul>
+        </aside>        
+        <main class="dashboard">
+            <nav>
+                <div class="nav-left">
+                    <h1>Admin Drivers</h1>
+                </div>
+                <div class="nav-search">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                    <button id="search-button" aria-label="Search">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+                <div class="right-items">
+                    <div class="img-case">
+                        <a href="/KCC/profile"><img src="/images/profile.png" alt="Profile"></a>
+                    </div>
+                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <header>
+                <button class="add-driver" id="add-driver">Add Driver</button>
+            
+                <div class="dropdowns">
+                    <label for="show">Show:</label>
+                    <select id="show">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                    </select>
+                    
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="newest-to-oldest">Newest to Oldest</option>
+                        <option value="oldest-to-newest">Oldest to Newest</option>
+                    </select>
+                </div>
+            </header>
+
+            <div class="drivers-table">
+                <table id="driverTable">
+                    <thead>
+                        <tr>
+                            <th>Driver ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Telephone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>(123) 456-7890</td>
+                            <td>
+                                <button class="edit-btn" data-id="1">Edit</button>
+                                <button class="delete-btn" data-id="1">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>jane.smith@example.com</td>
+                            <td>(987) 654-3210</td>
+                            <td>
+                                <button class="edit-btn" data-id="2">Edit</button>
+                                <button class="delete-btn" data-id="2">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sam Wilson</td>
+                            <td>sam.wilson@example.com</td>
+                            <td>(555) 123-4567</td>
+                            <td>
+                                <button class="edit-btn" data-id="3">Edit</button>
+                                <button class="delete-btn" data-id="3">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button class="prev-btn">Previous</button>
+                <span class="page-number">1</span>
+                <button class="next-btn">Next</button>
+            </div>
+        </main>
+
+        <div id="driverModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeAddModal">&times;</span>
+                <h2>Add Driver</h2>
+                <form id="addDriverForm">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="telephone" placeholder="Telephone" required>
+                    <button type="submit">Add Driver</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="editDriverModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeEditModal">&times;</span>
+                <h2>Edit Driver</h2>
+                <form id="editDriverForm">
+                    <input type="hidden" id="editDriverId">
+                    <input type="text" id="editName" placeholder="Name" required>
+                    <input type="email" id="editEmail" placeholder="Email" required>
+                    <input type="tel" id="editTelephone" placeholder="Telephone" required>
+                    <button type="submit">Update Driver</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="deleteConfirmationModal" class="modal">
+            <div class="modal-content">
+                <h2>Are you sure you want to delete this driver?</h2>
+                <button id="confirmDelete">Yes, Delete</button>
+                <button id="cancelDelete">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/admindrivers.js"></script>
+    <script>
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
