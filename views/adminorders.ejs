@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Orders</title>
+    <link rel="stylesheet" href="/stylesheets/adminorders.css">
+    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" class="logo">
+            <ul class="menu">
+                <li><a href="/admindashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                <li><a href="/adminshop"><i class="ri-shopping-bag-line"></i>Shop</a></li>
+                <li><a href="/adminorders"><i class="ri-instance-line"></i>Orders</a></li>
+                <li><a href="/admindrivers"><i class="ri-truck-line"></i>Delivery Drivers</a></li>
+                <li><a href="/admincustomers"><i class="ri-group-line"></i>Customers</a></li>
+            </ul>
+            <hr>
+            <ul class="menu">
+                <li><a href="#profile"><i class="ri-user-line"></i>My Profile</a></li>
+                <li><a href="#security"><i class="ri-lock-line"></i>Security</a></li>
+                <li><a href="/login.html"><i class="ri-logout-box-line"></i>Logout</a></li>
+            </ul>
+        </aside>        
+        <main class="dashboard">
+            <nav>
+                <div class="nav-left">
+                    <h1>Orders</h1>
+                </div>
+                <div class="nav-search">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                    <button id="search-button" aria-label="Search">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+                <div class="img-case">
+                    <a href="/KCC/profile"><img src="/images/profile.png" alt="Profile"></a>
+                </div>
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </nav>
+
+            <div class="table">
+                <div class="metrics">
+                    <div class="metric-card">
+                        <h2>Total Orders</h2>
+                        <p class="metric-value">35</p>
+                    </div>
+                    <div class="metric-card">
+                        <h2>Pending Orders</h2>
+                        <p class="metric-value">13</p>
+                    </div>
+                    <div class="metric-card">
+                        <h2>Shipped</h2>
+                        <p class="metric-value">8</p>
+                    </div>
+                    <div class="metric-card">
+                        <h2>Delivered</h2>
+                        <p class="metric-value">14</p>
+                    </div>
+                </div>
+                
+                <div class="small-nav">
+                    <div class="filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Processing</button>
+                        <button class="filter-btn">Shipped</button>
+                        <button class="filter-btn">Delivered</button>
+                        <button class="filter-btn">Canceled</button>
+                    </div>
+
+                    <div class="dropdowns">
+                        <label for="show">Show:</label>
+                        <select id="show">
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+    
+                        <label for="sort-by">Sort by:</label>
+                        <select id="sort-by">
+                            <option value="this-month">This Month</option>
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="october">October</option>
+                        </select>                        
+                    </div>
+                </div>
+                
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order <i class="ri-arrow-down-s-line"></i></th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <!-- <th>Payment</th> -->
+                            <th>Delivery Driver</th>
+                            <th>Status</th>
+                            <th>City</th>
+                            <th>Sub-Location</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>KCC Mala Plain Milk 500ml</td>
+                            <td>50</td>
+                            <td>27/06/24</td>
+                            <td>Naivas Embakasi</td>
+                            <!-- <td><span class="status completed">Completed</span></td> -->
+                            <td><span class="assign">Not Assigned</span></td>
+                            <td><span class="status processing">Processing</span></td>
+                            <td>Nairobi</td>
+                            <td>Donholm</td>
+                            <td>KSh 8,300</td>
+                            <td><i class="ri-more-2-line"></i></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Cascade Boo...</td>
+                            <td>22</td>
+                            <td>27/06/24</td>
+                            <td>Quick Mart Westlands</td>
+                            <!-- <td><span class="status completed">Completed</span></td> -->
+                            <td>Allan Maina</td>
+                            <td><span class="status shipped">Shipped</span></td>
+                            <td>Nairobi</td>
+                            <td>Embakasi</td>
+                            <td>KSh 12,499</td>
+                            <td><i class="ri-more-2-line"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Nova Bar Sto...</td>
+                            <td>15</td>
+                            <td>26/06/24</td>
+                            <td>Home Matt</td>
+                            <!-- <td><span class="status completed">Completed</span></td> -->
+                            <td>Peter Munene</td>
+                            <td><span class="status completed">Delivered</span></td>
+                            <td>Kisumu</td>
+                            <td>Ahero</td>
+                            <td>KSh 20,134</td>
+                            <td><i class="ri-more-2-line"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Haven Armch...</td>
+                            <td>170</td>
+                            <td>24/06/24</td>
+                            <td>Tuskys</td>
+                            <!-- <td><span class="status completed">Completed</span></td> -->
+                            <td><span class="assign">Not Assigned</span></td>
+                            <td><span class="status processing">Processing</span></td>
+                            <td>Nakuru</td>
+                            <td>Gilgil</td>
+                            <td>KSh 11,002</td>
+                            <td><i class="ri-more-2-line"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Novii Coffee...</td>
+                            <td>250</td>
+                            <td>24/06/24</td>
+                            <td>Quick Mart </td>
+                            <!-- <td><span class="status completed">Completed</span></td> -->
+                            <td>Allan Maina</td>
+                            <td><span class="status completed">Delivered</span></td>
+                            <td>Mombasa</td>
+                            <td>Likoni</td>
+                            <td>KSh 19,632</td>
+                            <td><i class="ri-more-2-line"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Zenith Conso...</td>
+                            <td>132</td>
+                            <td>23/06/24</td>
+                            <td>Safaricom</td>
+                            <!-- <td><span class="status completed">Completed</span></td> -->
+                            <td>Suleiman Karanja</td>
+                            <td><span class="status shipped">Shipped</span></td>
+                            <td>Kericho</td>
+                            <td>Litein</td>
+                            <td>KSh 23,251</td>
+                            <td><i class="ri-more-2-line"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pagination">
+                    <button class="pagination-btn"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">4</button>
+                    <span>...</span>
+                    <button class="pagination-btn">13</button>
+                    <button class="pagination-btn"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
