@@ -13,6 +13,10 @@ const shippingaddressRoute = require('./routes/shippingaddress');
 const checkoutRoute = require('./routes/checkout');
 const revieworderRoute = require('./routes/revieworder');
 const ordercompleteRoute = require('./routes/ordercomplete');
+const admindashboardRoute = require('./routes/admindashboard');
+const admindriversRoute = require('./routes/admindrivers');
+const adminordersRoute = require('./routes/adminorders');
+const adminshopRoute = require('./routes/adminshop');
 
 
 const app = express();
@@ -37,6 +41,10 @@ app.use('/', shippingaddressRoute);
 app.use('/', checkoutRoute);
 app.use('/', revieworderRoute);
 app.use('/', ordercompleteRoute);
+app.use('/', admindashboardRoute);
+app.use('/', admindriversRoute);
+app.use('/', adminordersRoute);
+app.use('/', adminshopRoute);
 
 
 const PORT = 3000; 
