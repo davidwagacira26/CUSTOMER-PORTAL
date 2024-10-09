@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/admindashboard.css">
+    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <img src="images/newkcc-logo.png" alt="KCC Portal Logo" class="logo">
+            <ul class="menu">
+                <li><a href="/admindashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                <li><a href="/adminshop"><i class="ri-shopping-bag-line"></i>Shop</a></li>
+                <li><a href="/adminorders"><i class="ri-instance-line"></i>Orders</a></li>
+                <li><a href="/admindrivers"><i class="ri-truck-line"></i>Delivery Drivers</a></li>
+                <li><a href="/admincustomers.html"><i class="ri-group-line"></i>Customers</a></li>
+            </ul>
+            <hr>
+            <ul class="menu">
+                <li><a href="#profile"><i class="ri-user-line"></i>My Profile</a></li>
+                <li><a href="#security"><i class="ri-lock-line"></i>Security</a></li>
+                <li><a href="/"><i class="ri-logout-box-line"></i>Logout</a></li>
+            </ul>
+        </aside>        
+        <main class="dashboard">
+            <nav>
+                <div class="nav-left">
+                    <h1>Admin Dashboard</h1>
+                </div>
+                <div class="nav-search">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                    <button id="search-button" aria-label="Search">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+                <div class="right-items">
+                    <div class="img-case">
+                        <a href="/profile"><img src="images/profile.png" alt="Profile"></a>
+                    </div>
+                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="body1">
+                <section class="dashboard-stats">
+                    <div class="stat-card card-black">
+                        <div class="stat-left">
+                            <i class="ri-group-line"></i>
+                        </div>
+                        <div class="stat-right">
+                            <h4>Customers</h4>
+                            <h2>187</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card card-blue">
+                        <div class="stat-left">
+                            <i class="ri-truck-line"></i>
+                        </div>
+                        <div class="stat-right">
+                            <h4>Delivery Drivers</h4>
+                            <h2>31</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card card-green">
+                        <div class="stat-left">
+                            <i class="ri-progress-5-line"></i>
+                        </div>
+                        <div class="stat-right">
+                            <h4>Pending Orders</h4>
+                            <h2>21</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card card-red">
+                        <div class="stat-left">
+                            <i class="ri-error-warning-line"></i>
+                        </div>
+                        <div class="stat-right">
+                            <h4>Out of Stock Products</h4>
+                            <h2>18</h2>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="main-content">
+                    <div class="sales-performance">
+                        <h2>Sales Performance</h2>
+                        <div class="chart-controls">
+                            <button class="active">Today's</button>
+                            <button>Monthly</button>
+                        </div>
+                        <canvas id="salesChart"></canvas>
+                    </div>
+
+                    <div class="popular-products">
+                        <h2>Popular Products</h2>
+                        <ul class="product-list">
+                            <li>
+                                <img src="/images/Delight Strawberry-250ml.jpg" alt="Esther Howard">
+                                <div class="product-info">
+                                    <h3>Delight Strawberry-250ml</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>989 Units</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/Mala TR 500ml.jpg" alt="Wade Warren">
+                                <div class="product-info">
+                                    <h3>Wade Warren</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>875 Units</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/Gold Crown.jpg" alt="Cameron Williamson">
+                                <div class="product-info">
+                                    <h3>Cameron Williamson</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>830 Units</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/La Yoghurt Pineapple-250ml.jpg" alt="Jenny Wilson">
+                                <div class="product-info">
+                                    <h3>Jenny Wilson</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>563 Units</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="report-button">View Report</button>
+                    </div>
+                </div>
+                
+                <div class="stock-status">
+                    <div class="almost-out-of-stock">
+                        <h2>Almost Out of Stock</h2>
+                        <ul class="product-list">
+                            <li>
+                                <img src="/images/Mala TR 500ml.jpg" alt="Mala TR 500ml">
+                                <div class="product-info">
+                                    <h3>Mala TR 500ml</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>5 Units</p>
+                                </div>
+                                <button class="view-product">View</button>
+                            </li>
+                            <li>
+                                <img src="/images/Gold Crown.jpg" alt="Gold Crown">
+                                <div class="product-info">
+                                    <h3>Gold Crown</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>8 Units</p>
+                                </div>
+                                <button class="view-product">View</button>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <div class="out-of-stock">
+                        <h2>Out of Stock</h2>
+                        <ul class="product-list">
+                            <li>
+                                <img src="/images/La Yoghurt Pineapple-250ml.jpg" alt="La Yoghurt Pineapple 250ml">
+                                <div class="product-info">
+                                    <h3>La Yoghurt Pineapple 250ml</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>0 Units</p>
+                                </div>
+                                <button class="view-product">View</button>
+                            </li>
+                            <li>
+                                <img src="/images/Delight Strawberry-250ml.jpg" alt="Delight Strawberry 250ml">
+                                <div class="product-info">
+                                    <h3>Delight Strawberry 250ml</h3>
+                                    <p>Category: Dairy</p>
+                                </div>
+                                <div class="product-stats">
+                                    <p>0 Units</p>
+                                </div>
+                                <button class="view-product">View</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="recent-activities">
+                    <h2>Recent Activities</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Products</th>
+                                    <th>Date</th>
+                                    <th>Customer name</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>KCC Salted Butter 500Gms</td>
+                                    <td>Oct 5th, 2024</td>
+                                    <td>Quick Mart</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                    <td>$400.00</td>
+                                </tr>
+                                <tr>
+                                    <td>KCC Fresh Milk 500ml</td>
+                                    <td>Oct 8th, 2024</td>
+                                    <td>Naivas</td>
+                                    <td><span class="status processing">Processing</span></td>
+                                    <td>$200.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Delight Vanilla 150ml</td>
+                                    <td>Oct 10th, 2024</td>
+                                    <td>Tusky's</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                    <td>$250.00</td>
+                                </tr>
+                                <tr>
+                                    <td>La Yorghurt Coconut 250ml</td>
+                                    <td>Oct 13th, 2024</td>
+                                    <td>Quick Mart</td>
+                                    <td><span class="status shipped">Shipped</span></td>
+                                    <td>$400.00</td>
+                                </tr>
+                                <tr>
+                                    <td>KCC Mala Plain Milk 1L</td>
+                                    <td>Oct 13th, 2024</td>
+                                    <td>Carefour</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                    <td>$100.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/javascripts/admindashboard.js"></script>
+    <script>
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
