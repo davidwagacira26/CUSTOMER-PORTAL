@@ -70,12 +70,12 @@
         <div class="input-fields">
           <div class="column-1">
             <label for="phoneNumber">Phone Number</label>
-            <input type="tel" id="phoneNumber" placeholder="Enter your M-Pesa number" />
+            <div class="phone-input-wrapper">
+              <input type="tel" id="phoneNumber" value="+254" maxlength="14" />
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
 
     <div class="panel-footer">
       <button class="btn back-btn" onclick="window.location.href='/shippingaddress'">Back</button>
