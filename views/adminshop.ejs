@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Shop</title>
+    <link rel="stylesheet" href="/stylesheets/adminshop.css">
+    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" class="logo">
+            <ul class="menu">
+                <li><a href="/admindashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                <li><a href="/adminshop"><i class="ri-shopping-bag-line"></i>Shop</a></li>
+                <li><a href="/adminorders"><i class="ri-instance-line"></i>Orders</a></li>
+                <li><a href="/admindrivers"><i class="ri-truck-line"></i>Delivery Drivers</a></li>
+                <li><a href="/admincustomers"><i class="ri-group-line"></i>Customers</a></li>
+            </ul>
+            <hr>
+            <ul class="menu">
+                <li><a href="#profile"><i class="ri-user-line"></i>My Profile</a></li>
+                <li><a href="#security"><i class="ri-lock-line"></i>Security</a></li>
+                <li><a href="/"><i class="ri-logout-box-line"></i>Logout</a></li>
+            </ul>
+        </aside>        
+        <main class="shop">
+            <nav>
+                <div class="nav-left">
+                    <h1>Admin Shop</h1>
+                </div>
+                <div class="nav-search">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                    <button id="search-button" aria-label="Search">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+                <div class="right-items">
+                    <div class="img-case">
+                        <a href="/KCC/profile"><img src="/images/profile.png" alt="Profile"></a>
+                    </div>
+                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <header>
+                <button class="add-product" id="add-product-btn">Add Product</button>
+            
+                <div class="dropdowns">
+                    <label for="show">Show:</label>
+                    <select id="show">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                    </select>
+
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="newest-to-oldest">Newest to Oldest</option>
+                        <option value="oldest-to-newest">Oldest to Newest</option>
+                        <option value="highest-to-lowest">Highest to Lowest</option>
+                        <option value="lowest-to-highest">Lowest to Highest</option>
+                        <option value="lowest-stock">Lowest Stock</option>
+                        <option value="highest-stock">Highest Stock</option>
+                    </select>
+                </div>
+            </header> 
+            <hr>
+            
+            <div class="product-grid">
+                <!-- Product cards will be dynamically added here -->
+            </div>
+
+            <div class="pagination">
+                <button class="prev-btn">Prev</button>
+                <span class="page-number">1</span>
+                <button class="next-btn">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <div class="modal-grid">
+                    <div class="image-upload-section">
+                        <div class="primary-image-upload">
+                            <label for="primary-image">Primary Image</label>
+                            <div id="primary-image-preview" class="image-preview">
+                                <input type="file" id="primary-image" accept="image/*" required>
+                                <i class="upload-icon ri-upload-2-line"></i>
+                            </div>
+                        </div>
+                        <div class="additional-images">
+                            <div class="additional-image-upload">
+                                <input type="file" accept="image/*">
+                                <i class="upload-icon ri-upload-2-line"></i>
+                            </div>
+                            <div class="add-more-images">
+                                <span>+</span>
+                                <span>Add more</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <label for="product-name">Name</label>
+                        <input type="text" id="product-name" required>
+                        
+                        <label for="product-price">Price</label>
+                        <input type="number" id="product-price" step="0.01" required>
+                        
+                        <label for="product-quantity">Quantity</label>
+                        <input type="number" id="product-quantity" required>
+                        
+                        <div class="sale-section">
+                            <input type="checkbox" id="on-sale">
+                            <label for="on-sale">On Sale</label>
+                            <input type="number" id="sale-percentage" placeholder="Sale %" min="1" max="100" disabled>
+                        </div>
+                        
+                        <button type="submit">Add Product</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/javascripts/adminshop.js"></script>
+    <script>
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
