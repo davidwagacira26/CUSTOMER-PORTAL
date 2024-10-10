@@ -1,7 +1,11 @@
+let selectedPaymentMethod = 'card';
+
 document.addEventListener('DOMContentLoaded', function() {
   const cardNumberInput = document.getElementById('cardnumber');
   const cardTypeIcon = document.getElementById('card-type-icon');
   const dateInput = document.getElementById('date');
+  const phoneInput = document.getElementById('phoneNumber');
+  const payButton = document.getElementById('payButton');
 
   cardNumberInput.addEventListener('input', function(e) {
     let value = e.target.value.replace(/\D/g, '');
@@ -18,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Detect card type
     if (value.startsWith('4')) {
-      cardTypeIcon.src = '/images/visa.png';
+      cardTypeIcon.src = '/assets/images/visa.png';
       cardTypeIcon.style.display = 'block';
     } else if (value.startsWith('5')) {
-      cardTypeIcon.src = '/images/mastercard.png';
+      cardTypeIcon.src = '/assets/images/mastercard.png';
       cardTypeIcon.style.display = 'block';
     } else {
       cardTypeIcon.style.display = 'none';
@@ -41,26 +45,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     e.target.value = formattedValue;
   });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-  const phoneInput = document.getElementById('phoneNumber');
-  const prefix = '+254 ';
+  const prefix = '+254';
 
   phoneInput.addEventListener('input', function(e) {
-    let value = e.target.value;
+    let value = e.target.value.replace(/\D/g, '');
     
-    if (!value.startsWith(prefix)) {
-      value = prefix;
+    if (!value.startsWith('254')) {
+      value = '254' + value;
+    }
+    
+    if (value.length > 12) {
+      value = value.slice(0, 12);
     }
 
-    let digits = value.slice(prefix.length).replace(/\D/g, '');
-    
-    if (digits.length > 9) {
-      digits = digits.slice(0, 9);
-    }
-
-    e.target.value = prefix + digits;
+    e.target.value = '+' + value;
   });
 
   phoneInput.addEventListener('focus', function(e) {
@@ -72,9 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   phoneInput.addEventListener('blur', function(e) {
     if (e.target.value === prefix) {
-      e.target.value = prefix;
+      e.target.value = '';
     }
   });
+
+  payButton.addEventListener('click', handlePayment);
 });
 
 function showPaymentForm(method) {
@@ -84,8 +85,55 @@ function showPaymentForm(method) {
   if (method === 'card') {
     cardForm.style.display = 'block';
     mpesaForm.style.display = 'none';
+    selectedPaymentMethod = 'card';
   } else if (method === 'mpesa') {
     cardForm.style.display = 'none';
     mpesaForm.style.display = 'block';
+    selectedPaymentMethod = 'mpesa';
+  }
+}
+
+async function handlePayment() {
+  const loadingIndicator = document.getElementById('loadingIndicator');
+  const errorMessage = document.getElementById('errorMessage');
+
+  loadingIndicator.style.display = 'block';
+  errorMessage.style.display = 'none';
+
+  if (selectedPaymentMethod === 'mpesa') {
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    
+    try {
+      const response = await fetch('/initiate-payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ phoneNumber })
+      });
+
+      const result = await response.json();
+
+      if (result.ResponseCode === "0") {
+        alert('Payment initiated. Please check your phone to complete the payment.');
+        window.location.href = '/thankyou';
+      } else {
+        throw new Error(result.errorMessage || 'Failed to initiate payment');
+      }
+    } catch (error) {
+      errorMessage.textContent = 'Failed to initiate M-Pesa payment. Please try again.';
+      errorMessage.style.display = 'block';
+      console.error('Error:', error);
+    } finally {
+      loadingIndicator.style.display = 'none';
+    }
+  } else if (selectedPaymentMethod === 'card') {
+    // Implement card payment logic here
+    alert('Card payment processing is not implemented yet.');
+    loadingIndicator.style.display = 'none';
+  } else {
+    errorMessage.textContent = 'Please select a payment method.';
+    errorMessage.style.display = 'block';
+    loadingIndicator.style.display = 'none';
   }
 }
