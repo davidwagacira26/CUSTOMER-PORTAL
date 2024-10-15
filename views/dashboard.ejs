@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/stylesheets/dashboard.css">
-  <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/assets/stylesheets/dashboard.css">
+  <link rel="shortcut icon" href="/assets/images/kcclogo.jpeg" type="image/png+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/assets/stylesheets/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -23,19 +23,19 @@
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <img src="images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
+                <img src="/assets/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
             </div>
             <nav>
                 <ul>
                     <div class="top-content">
-                        <li><a href="/dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
-                        <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
-                        <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
-                        <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
+                        <li><a href="./dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                        <li><a href="./products.html"><i data-lucide="shopping-bag"></i> Products</a></li>
+                        <li><a href="./cart.html"><i data-lucide="shopping-cart"></i> Cart</a></li>
+                        <li><a href="./orders.html"><i data-lucide="package"></i> Orders</a></li>
                     </div>
                     <div class="bottom-content">
-                        <li><a href="/profile"><i data-lucide="user"></i> My Profile</a></li>
-                        <li><a href="/" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
+                        <li><a href="./profile.html"><i data-lucide="user"></i> My Profile</a></li>
+                        <li><a href="/index.html" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
                     </div>
                 </ul>
             </nav>
@@ -50,7 +50,7 @@
                     </div>
                     <button class="icon-button"><i data-lucide="bell"></i></button>
                     <button class="icon-button"><i data-lucide="settings"></i></button>
-                    <button class="browse-product-button">Browse products</button>
+                    <button class="browse-product-button" onclick="window.location.href='./products.html'">Browse Products</button>
                 </div>
             </header>
             <h1>Welcome back, User!</h1>
@@ -84,7 +84,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img src="images/Delight Vanilla-TR 500ml.jpg" alt="Delight Vanilla 500ml">
+                                <img src="/assets/images/Delight Vanilla-TR 500ml.jpg" alt="Delight Vanilla 500ml">
                             </div>
                             <div class="name">
                                 <p>Delight Vanilla 500ml</p>
@@ -95,7 +95,7 @@
                         </li>
                         <li>
                         <div class="product">
-                            <img src="images/Gold Crown.jpg" alt="Delight Vanilla 500ml">
+                            <img src="/assets/images/Gold Crown.jpg" alt="Delight Vanilla 500ml">
                         </div>
                         <div class="name">
                             <p>KCC Gold Crown Fresh Milk 500ml</p>
@@ -106,7 +106,7 @@
                     </li>
                     <li>
                         <div class="product">
-                            <img src="images/K.C.C Salted Butter 500G Tub.jpeg" alt="Delight Vanilla 500ml">
+                            <img src="/assets/images/K.C.C Salted Butter 500G Tub.jpeg" alt="Delight Vanilla 500ml">
                         </div>
                         <div class="name">
                             <p>KCC Butter Salted Butter 500g</p>
@@ -129,7 +129,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img src="/images/Gold Crown.jpg" alt="Delight Vanilla 500ml">
+                                <img src="/assets/images/Gold Crown.jpg" alt="Delight Vanilla 500ml">
                             </div>
                             <div class="name">
                                 <p>KCC Gold Crown Fresh Milk 500ml</p>
@@ -140,7 +140,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img src="/images/UHT Milk.jpg" alt="UHT Milk">
+                                <img src="/assets/images/UHT Milk.jpg" alt="UHT Milk">
                             </div>
                             <div class="name">
                                 <p>UHT Homogenised Milk 1L</p>
@@ -151,7 +151,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img src="/images/Mala TR 500ml.jpg" alt="KCC Mala 500ml">
+                                <img src="/assets/images/Mala TR 500ml.jpg" alt="KCC Mala 500ml">
                             </div>
                             <div class="name">
                                 <p>KCC Mala Plain Milk 500ml</p>
@@ -204,21 +204,21 @@
             <div class="payment-methods">
                 <h3>Payment Partners</h3>
                 <div class="payment-icons">
-                    <img src="/svg/visa.svg" alt="Visa" width="40" height="30">
-                    <img src="/svg/mastercard.svg" alt="MPESA" width="40" height="30">
-                    <img src="/images/M-PESA-logo-2.png" alt="Mastercard" width="40" height="30">
+                    <img src="/assets/svg/visa.svg" alt="Visa" width="40" height="30">
+                    <img src="/assets/svg/mastercard.svg" alt="MPESA" width="40" height="30">
+                    <img src="/assets/images/M-PESA-logo-2.png" alt="Mastercard" width="40" height="30">
                 </div>
             </div>
             <div class="footer-logo">
-                <img src="/images/newkcc-logo.png" alt="KCC Logo" style="width: 150px; height: auto;">
+                <img src="/assets/images/newkcc-logo.png" alt="KCC Logo" style="width: 150px; height: auto;">
             </div>
         </div>
     
         <div class="social-media">
             <div class="social-icons">
-                <a href="https://api.whatsapp.com/send?phone=%2B254110936565&context=ARD0QaTWj_RY3CA8TRg-AL13nEaOFTKIgFYb9aqjJxXIMD5QPR1JE18ec0_FEYapTqNgAgecd-K8ZhMQD-Ekk4HMboJ6fPkoKUHvMSg7BQ_gBKqfZZbHrPiO4GvblEpiu-PKvl_AjBfuWJS4JHsxzc_tVA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawFvaQ9leHRuA2FlbQIxMAABHW7rTHDZziF4xlHUtoWBNcvMNU2wvnmXnccowQczp_hcmKnTIA_6IEKV6g_aem_2kAM0Aa2SKaBztAr0J3W_g" target="_blank"><img src="/images/whatsapp.png" alt="Whatsapp" width="30" height="30"></a>
-                <a href="https://web.facebook.com/NewKCCOfficialPage/?_rdc=1&_rdr" target="_blank"><img src="/images/facebook.png" alt="Facebook" width="30" height="30"></a>
-                <a href="https://youtube.com/@newkcckenya?si=BFZMeJyHLfngAWAe" target="_blank"><img src="/images/youtube.png" alt="Youtube" width="30" height="30"></a>
+                <a href="https://api.whatsapp.com/send?phone=%2B254110936565&context=ARD0QaTWj_RY3CA8TRg-AL13nEaOFTKIgFYb9aqjJxXIMD5QPR1JE18ec0_FEYapTqNgAgecd-K8ZhMQD-Ekk4HMboJ6fPkoKUHvMSg7BQ_gBKqfZZbHrPiO4GvblEpiu-PKvl_AjBfuWJS4JHsxzc_tVA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawFvaQ9leHRuA2FlbQIxMAABHW7rTHDZziF4xlHUtoWBNcvMNU2wvnmXnccowQczp_hcmKnTIA_6IEKV6g_aem_2kAM0Aa2SKaBztAr0J3W_g" target="_blank"><img src="/assets/images/whatsapp.png" alt="Whatsapp" width="30" height="30"></a>
+                <a href="https://web.facebook.com/NewKCCOfficialPage/?_rdc=1&_rdr" target="_blank"><img src="/assets/images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://youtube.com/@newkcckenya?si=BFZMeJyHLfngAWAe" target="_blank"><img src="/assets/images/youtube.png" alt="Youtube" width="30" height="30"></a>
             </div>
         </div>
     </div>
@@ -226,6 +226,6 @@
             <p>&copy; 2024 New KCC. All rights reserved.</p>
         </div>
     </footer>
-    <script src="/javascripts/dashboard.js"></script>
+    <script src="/assets/javascript/home.js"></script>
 </body>
 </html>
