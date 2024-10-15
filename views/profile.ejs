@@ -3,51 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KCC Customer Portal</title>
-    <link rel="shortcut icon" href="/images/kcclogo.jpeg" type="image/png+xml">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="/assets/stylesheets/profile.css">
+    <link rel="shortcut icon" href="/assets/images/kcclogo.jpeg" type="image/png+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/assets/stylesheets/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="dashboard">
+    <div class="top-bar">
+        <div class="containerbar">
+            <span class="contact-info">
+                <i class='bx bx-envelope'></i> info@newkcc.co.ke
+            </span>
+            <span class="contact-info">
+                <i class='bx bx-phone' ></i> +254 110 936565 / +254 780 936557
+            </span>
+        </div>
+    </div>
+    <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <img src="/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
+                <img src="/assets/images/newkcc-logo.png" alt="KCC Portal Logo" style="width: 210px; height: auto;">
             </div>
             <nav>
                 <ul>
                     <div class="top-content">
-                        <li><a href="/dashboard><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
-                    <li><a href="/products"><i data-lucide="shopping-bag"></i> Products</a></li>
-                    <li><a href="/cart"><i data-lucide="shopping-cart"></i> Cart</a></li>
-                    <li><a href="/orders"><i data-lucide="package"></i> Orders</a></li>
-
+                        <li><a href="./dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                        <li><a href="./products.html"><i data-lucide="shopping-bag"></i> Products</a></li>
+                        <li><a href="./cart.html"><i data-lucide="shopping-cart"></i> Cart</a></li>
+                        <li><a href="/orders.html"><i data-lucide="package"></i> Orders</a></li>
+                    </div>
                     <div class="bottom-content">
-                        <li><a href="/profile"><i data-lucide="user"></i> My Profile</a></li>
-                        <li><a href="#" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
+                        <li><a href="./profile.html"><i data-lucide="user"></i> My Profile</a></li>
+                        <li><a href="./index.html" id="logout"><i data-lucide="log-out"></i> Log Out</a></li>
                     </div>
                 </ul>
             </nav>
         </aside>
-        <main class="main-content">
+        <main>
             <header>
-                <div class="header-left">
-                    <h1>My Profile</h1>
-                    <button id="sidebar-toggle" aria-label="Toggle Sidebar">
-                        <i data-lucide="menu"></i>
-                    </button>
-                </div>
-                <div class="header-search">
-                    <input type="text" id="search-bar" placeholder="Search...">
-                    <button id="search-button" aria-label="Search">
+                <h1>My Profile</h1>
+                <div class="header-right">
+                    <div class="search-bar">
                         <i data-lucide="search"></i>
-                    </button>
+                        <input type="text" placeholder="Search anything in KCC...">
+                    </div>
+                    <button class="icon-button"><i data-lucide="bell"></i></button>
+                    <button class="icon-button"><i data-lucide="settings"></i></button>
                 </div>
-                <div class="img-case">
-                    <a href="/profile"><img src="/images/profile.png" alt=""></a>
+            </header>
+            
+            <section class="profile-section">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <img src="/assets/images/profilepicture.png" alt="Profile Picture" class="profile-picture">
+                        <h2>John Doe</h2>
+                        <p>Customer ID: KCC12345</p>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value">johndoe@example.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Phone:</span>
+                            <span class="detail-value">+254 123 456789</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Address:</span>
+                            <span class="detail-value">123 Main St, Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="edit-profile-button">Edit Profile</button>
+                        <button class="change-password-button">Change Password</button>
+                    </div>
                 </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Total Orders:</span>
+                        <span>15</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Pending Orders:</span>
+                        <span>2</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Completed Orders:</span>
+                        <span>13</span>
+                    </div>
+                    <a href="./orders.html" class="view-all-orders">View All Orders</a>
+                </div>
+            </section>
         </main>
     </div>
-    <script src="/javascripts/profile.js"></script>
+    <footer class="full-footer">
+        <div class="footer-container">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./dashboard.html">Home</a></li>
+                    <li><a href="./products.html">Products</a></li>
+                    <li><a href="./cart.html">View Cart</a></li>
+                    <li><a href="./orders.html">Manage Orders</a></li>
+                </ul>
+            </div>
+    
+            <div class="downloads">
+                <h3>About KCC</h3>
+                <ul>
+                    <li><a href="https://www.newkcc.co.ke/who-we-are/">About us</a></li>
+                    <li><a href="https://www.newkcc.co.ke/careers-2/">Careers</a></li>
+                    <li><a href="https://www.newkcc.co.ke/blog/">Blog</a></li>
+                    <li><a href="https://www.newkcc.co.ke/intent/">Intent</a></li>
+                    <li><a href="https://www.newkcc.co.ke/wp-content/uploads/2023/01/QUALITY-POLICY-22.08.2022.pdf">Quality Policy</a></li>
+                    <li><a href="https://www.newkcc.co.ke/wp-content/uploads/2024/03/Food-Safety-Policy.pdf">Food Safety Policy</a></li>
+                </ul>
+            </div>
+    
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p>Creamery House</p>
+                <p>Dakar Rd, Industrial Area</p>
+                <p>P.O. Box 30131 – 00100</p>
+                <p>Tel: +254 20 3980 000/222</p>
+                <p>Cell: 0722 203668 / 0736203668</p>
+                <p><a href="mailto:info@newkcc.co.ke">Email: info@newkcc.co.ke</a></p>
+                <p>WhatsApp: <a href="tel:+254110936565">+254 110 936565</a> / <a href="tel:+254780936557">+254 780 936557</a></p>
+            </div>
+    
+            <div class="payment-methods">
+                <h3>Payment Partners</h3>
+                <div class="payment-icons">
+                    <img src="/assets/svg/visa.svg" alt="Visa" width="40" height="30">
+                    <img src="/assets/svg/mastercard.svg" alt="MPESA" width="40" height="30">
+                    <img src="/assets/images/M-PESA-logo-2.png" alt="Mastercard" width="40" height="30">
+                </div>
+            </div>
+            <div class="footer-logo">
+                <img src="/assets/images/newkcc-logo.png" alt="KCC Logo" style="width: 150px; height: auto;">
+            </div>
+        </div>
+    
+        <div class="social-media">
+            <div class="social-icons">
+                <a href="https://api.whatsapp.com/send?phone=%2B254110936565&context=ARD0QaTWj_RY3CA8TRg-AL13nEaOFTKIgFYb9aqjJxXIMD5QPR1JE18ec0_FEYapTqNgAgecd-K8ZhMQD-Ekk4HMboJ6fPkoKUHvMSg7BQ_gBKqfZZbHrPiO4GvblEpiu-PKvl_AjBfuWJS4JHsxzc_tVA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawFvaQ9leHRuA2FlbQIxMAABHW7rTHDZziF4xlHUtoWBNcvMNU2wvnmXnccowQczp_hcmKnTIA_6IEKV6g_aem_2kAM0Aa2SKaBztAr0J3W_g" target="_blank"><img src="/assets/images/whatsapp.png" alt="Whatsapp" width="30" height="30"></a>
+                <a href="https://web.facebook.com/NewKCCOfficialPage/?_rdc=1&_rdr" target="_blank"><img src="/assets/images/facebook.png" alt="Facebook" width="30" height="30"></a>
+                <a href="https://youtube.com/@newkcckenya?si=BFZMeJyHLfngAWAe" target="_blank"><img src="/assets/images/youtube.png" alt="Youtube" width="30" height="30"></a>
+            </div>
+        </div>
+    </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 New KCC. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/assets/javascript/profile.js"></script>
 </body>
 </html>
